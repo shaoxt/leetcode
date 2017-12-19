@@ -47,12 +47,6 @@ import java.util.List;
  * @version 1.0
  */
 public class AverageOfLevelsInBinaryTree {
-    public class TreeNode {
-          int val;
-          TreeNode left;
-          TreeNode right;
-          TreeNode(int x) { val = x; }
-    }
 
     public List<Double> averageOfLevels(TreeNode root) {
         List<Double> total = new ArrayList<>();

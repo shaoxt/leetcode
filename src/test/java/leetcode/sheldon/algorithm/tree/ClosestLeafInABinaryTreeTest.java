@@ -11,12 +11,12 @@ import static org.junit.Assert.*;
 public class ClosestLeafInABinaryTreeTest {
     @Test
     public void findClosestLeaf() throws Exception {
-        ClosestLeafInABinaryTree.TreeNode treeNode = new ClosestLeafInABinaryTree.TreeNode(1);
-        treeNode.left = new ClosestLeafInABinaryTree.TreeNode(2);
-        treeNode.right = new ClosestLeafInABinaryTree.TreeNode(3);
-        treeNode.left.left = new ClosestLeafInABinaryTree.TreeNode(4);
-        treeNode.left.left.left = new ClosestLeafInABinaryTree.TreeNode(5);
-        treeNode.left.left.left.left = new ClosestLeafInABinaryTree.TreeNode(6);
+        TreeNode treeNode = new TreeNode(1);
+        treeNode.left = new TreeNode(2);
+        treeNode.right = new TreeNode(3);
+        treeNode.left.left = new TreeNode(4);
+        treeNode.left.left.left = new TreeNode(5);
+        treeNode.left.left.left.left = new TreeNode(6);
 
         ClosestLeafInABinaryTree solution = new ClosestLeafInABinaryTree();
         assertEquals(3, solution.findClosestLeaf(treeNode, 2));

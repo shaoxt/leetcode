@@ -81,12 +81,6 @@ import java.util.Stack;
  * @version 1.0
  */
 public class ClosestLeafInABinaryTree {
-      public static class TreeNode {
-          int val;
-          TreeNode left;
-          TreeNode right;
-          public TreeNode(int x) { val = x; }
-      }
 
     public int findClosestLeaf(TreeNode root, int k) {
           if (root == null) {
