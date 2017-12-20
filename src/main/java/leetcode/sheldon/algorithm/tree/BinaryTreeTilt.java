@@ -25,8 +25,31 @@
 package leetcode.sheldon.algorithm.tree;
 
 /**
+ *
  * @author Sheldon Shao xshao@ebay.com on 12/18/17.
  * @version 1.0
  */
 public class BinaryTreeTilt {
+    public int findTilt(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int[] tilt = new int[1];
+        postorder(root, tilt);
+        return tilt[0];
+    }
+
+    public int postorder(TreeNode node, int[] tilt) {
+        int sumLeft = 0;
+        if (node.left != null) {
+            sumLeft = postorder(node.left, tilt);
+        }
+        int sumRight = 0;
+        if (node.right != null) {
+            sumRight = postorder(node.right, tilt);
+        }
+        tilt[0] += Math.abs(sumLeft - sumRight);
+        return sumLeft + sumRight + node.val;
+    }
+
 }
