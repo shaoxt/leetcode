@@ -31,54 +31,56 @@ import java.util.*;
  * @version 1.0
  */
 public class Contest4 {
+//
+//    public int intersectionSizeTwo(int[][] intervals) {
+//        int min = 0;
+//        int max = Integer.MAX_VALUE;
+//        int len = intervals.length;
+//        for(int i = 0; i < len; i ++) {
+//            min = Math.min(intervals[i][0], min);
+//            max = Math.max(intervals[i][1], max);
+//        }
+//
+//        TreeMap<Integer, int[]> ranges = new TreeMap<>();
+//        ranges.put(intervals[0][0], new int[] {intervals[0][1], 1});
+//        for(int i = 1; i < len; i ++) {
+//            putCommon(ranges, intervals[i]);
+//        }
+//
+//        return 0;
+//    }
 
-    public int intersectionSizeTwo(int[][] intervals) {
-        int min = 0;
-        int max = Integer.MAX_VALUE;
-        int len = intervals.length;
-        for(int i = 0; i < len; i ++) {
-            min = Math.min(intervals[i][0], min);
-            max = Math.max(intervals[i][1], max);
-        }
-
-        TreeMap<Integer, int[]> ranges = new TreeMap<>();
-        ranges.put(intervals[0][0], new int[] {intervals[0][1], 1});
-        for(int i = 1; i < len; i ++) {
-            putCommon(ranges, intervals[i]);
-        }
-    }
-
-    protected void putCommon( TreeMap<Integer, int[]> ranges, int[] interval) {
-        int s = interval[0];
-        int e = interval[1];
-        Iterator<Integer> it = ranges.keySet().iterator();
-
-        int k;
-        while(it.hasNext()) {
-            k = it.next();
-            if (s < k) {
-                ranges.put(s, new int[] { k-1, 1}); //One time
-                int[] end = ranges.get(k);
-                if (end[0] >= e) {
-                    end[1] ++; //More
-                }
-                else {
-
-                }
-                s = k;
-                break;
-            }
-        }
-        int[] end = ranges.get(k);
-        if (end[0] >= e) {
-            end[1] ++; //More
-        }
-        else {
-            s = end[0] + 1;
-            it = ranges.keySet().iterator();
-            while(it.hasNext()) {
-
-            }
-        }
-    }
+//    protected void putCommon( TreeMap<Integer, int[]> ranges, int[] interval) {
+//        int s = interval[0];
+//        int e = interval[1];
+//        Iterator<Integer> it = ranges.keySet().iterator();
+//
+//        int k;
+//        while(it.hasNext()) {
+//            k = it.next();
+//            if (s < k) {
+//                ranges.put(s, new int[] { k-1, 1}); //One time
+//                int[] end = ranges.get(k);
+//                if (end[0] >= e) {
+//                    end[1] ++; //More
+//                }
+//                else {
+//
+//                }
+//                s = k;
+//                break;
+//            }
+//        }
+//        int[] end = ranges.get(k);
+//        if (end[0] >= e) {
+//            end[1] ++; //More
+//        }
+//        else {
+//            s = end[0] + 1;
+//            it = ranges.keySet().iterator();
+//            while(it.hasNext()) {
+//
+//            }
+//        }
+//    }
 }
