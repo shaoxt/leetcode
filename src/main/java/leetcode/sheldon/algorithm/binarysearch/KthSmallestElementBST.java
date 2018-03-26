@@ -22,18 +22,49 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package leetcode.sheldon.algorithm.tree;
+package leetcode.sheldon.algorithm.binarysearch;
+
+import leetcode.sheldon.algorithm.tree.TreeNode;
 
 /**
- * @author Sheldon Shao xshao@ebay.com on 12/18/17.
+ * Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+ *
+ * Note:
+ *
+ * You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
+ *
+ * Follow up:
+ * What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
+ *
+ * @author Sheldon Shao xshao@ebay.com on 3/24/18.
  * @version 1.0
  */
-public class TreeNode {
-    public int val;
-    public TreeNode left;
-    public TreeNode right;
+public class KthSmallestElementBST {
 
-    public TreeNode(int x) {
-        val = x;
+    private int count;
+
+    //DFS Inorder
+    public int kthSmallest(TreeNode root, int k) {
+        if (root.left != null) {
+            int result = kthSmallest(root.left, k);
+            if (count == k) {
+                return result;
+            }
+        }
+
+
+        count ++;
+        if (count == k) {
+            return root.val;
+        }
+
+        if (root.right != null) {
+            int result = kthSmallest(root.right, k);
+            if (count == k) {
+                return result;
+            }
+        }
+
+        return -1;
     }
 }
