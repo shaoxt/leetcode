@@ -67,7 +67,7 @@ import leetcode.sheldon.algorithm.tree.TreeNode;
  * @version 1.0
  */
 public class SplitBST {
-    
+
     public TreeNode[] splitBST(TreeNode node, int V) {
         if (node == null) {
             return new TreeNode[2];
